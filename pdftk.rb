@@ -7,6 +7,7 @@ class Pdftk < Formula
   depends_on :macos => :el_capitan
 
   def install
+    system "xar", "-x", "-f", "pdftk_server-2.02-mac_osx-10.11-setup.pkg"
     system "pax", "-rz", "-f", "pdftk.pkg/Payload"
     libexec.install "bin", "man", "lib"
     bin.install_symlink libexec/"bin/pdftk"
